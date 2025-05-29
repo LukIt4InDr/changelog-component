@@ -29,6 +29,22 @@ ul {
     color: gray;
 }
 
+.changelog a {
+    display: block;
+    text-align: center;
+    color: white;
+    background: black;
+    max-width: 200px;
+    margin: auto;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.changelog a:hover {
+    background: gray;
+    color: black;
+}
+
 .changelog-timeline {
     display: flex;
     flex-direction: column;
@@ -44,6 +60,7 @@ ul {
 }
 
 .changelog-component::before {
+    position: absolute;
     content: attr(data-date);
     font-weight: lighter;
     color: gray;
