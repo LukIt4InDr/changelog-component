@@ -13,10 +13,13 @@ ul {
 }
 
 .changelog {
+    display: flex;
+    flex-direction: column;
     margin: 16px;
     padding: 16px;
     border: 2px solid black;
     border-radius: 15px;
+    max-width: 600px;
 }
 
 .changelog h2 {
@@ -35,7 +38,7 @@ ul {
     color: white;
     background: black;
     max-width: 200px;
-    margin: auto;
+    margin: 18px auto;
     padding: 8px;
     border-radius: 15px;
 }
@@ -51,18 +54,32 @@ ul {
     gap: 32px;
     padding: 32px 0;
     margin: 0 auto;
+    margin-right: 0;
     border-left: 4px solid black;
 }
 
 .changelog-component {
     padding-left: 32px;
     font-weight: bold;
+    position: relative;
 }
 
 .changelog-component::before {
     position: absolute;
     content: attr(data-date);
+    text-align: right;
     font-weight: lighter;
     color: gray;
-    left: 0;
+    left: -180px;
+    min-width: 150px;
+}
+
+.changelog-component::after {
+    position: absolute;
+    content: '';
+    background: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: -15px;
 }
